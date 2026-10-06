@@ -1,0 +1,34 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 23 Sept 2026, 10:53:10 am
+    Author     : Suprakash
+*/
+
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBFBFA;
+            color: #1A1A1A;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+        .font-editorial {
+            font-family: 'Playfair Display', serif;
+        }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        ::selection {
+            background-color: #1A1A1A;
+            color: #FBFBFA;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }

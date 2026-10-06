@@ -1,0 +1,84 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 22 Sept 2026, 9:39:45 pm
+    Author     : Suprakash
+*/
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FBFBFA;
+    color: #1A1A1A;
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+.font-editorial {
+    font-family: 'Playfair Display', serif;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+::selection {
+    background-color: #1A1A1A;
+    color: #FBFBFA;
+}
+
+/* Badge fix for narrow/stacked spaces */
+.role-badge {
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Responsive Table-to-Card Stack for Mobile (< 768px) */
+@media (max-width: 767px) {
+    .responsive-data-table,
+    .responsive-data-table thead,
+    .responsive-data-table tbody,
+    .responsive-data-table th,
+    .responsive-data-table td,
+    .responsive-data-table tr {
+        display: block;
+    }
+
+    .responsive-data-table thead {
+        display: none; /* Hide traditional headers on mobile */
+    }
+
+    .responsive-data-table tr {
+        background: #ffffff;
+        border: 1px solid #e4e4e7;
+        border-radius: 1.5rem;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .responsive-data-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.6rem 0.5rem;
+        text-align: right;
+        border-bottom: 1px solid #f4f4f5;
+    }
+
+    .responsive-data-table td:last-child {
+        border-bottom: none;
+        justify-content: flex-end;
+        padding-top: 0.8rem;
+    }
+
+    /* Inject label hints via pseudo-elements */
+    .responsive-data-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 0.05em;
+        color: #71717a;
+        text-align: left;
+    }
+}

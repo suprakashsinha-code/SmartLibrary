@@ -4,13 +4,16 @@
 <hibernate-configuration>
     <session-factory>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-<property name="connection.url">jdbc:mysql://mysql-a592765-sinhasuprakash186-f0a0.aivencloud.com:20229/defaultdb?sslMode=REQUIRED</property>
-<property name="connection.username">avnadmin</property>
-<property name="connection.password">AVNS_jNlEX1ba95DrI8dbWvX</property>
+
+        <!-- আসল value গুলো Render-এর Environment Variables থেকে আসে (HibernateUtil.java দেখুন) -->
+        <property name="connection.url">${DB_URL}</property>
+        <property name="connection.username">${DB_USER}</property>
+        <property name="connection.password">${DB_PASS}</property>
+
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
-        
+
         <!-- Entity Mappings -->
         <mapping class="com.mycompany.smartlibrary.model.Specialization"/>
         <mapping class="com.mycompany.smartlibrary.model.Author"/>
@@ -19,7 +22,7 @@
         <mapping class="com.mycompany.smartlibrary.model.BookIssue"/>
         <mapping class="com.mycompany.smartlibrary.model.User"/>
         <mapping class="com.mycompany.smartlibrary.model.BookRequest"/>
-<mapping class="com.mycompany.smartlibrary.model.Member"/>
-<mapping class="com.mycompany.smartlibrary.model.Fine"/>
+        <mapping class="com.mycompany.smartlibrary.model.Member"/>
+        <mapping class="com.mycompany.smartlibrary.model.Fine"/>
     </session-factory>
 </hibernate-configuration>

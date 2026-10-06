@@ -8,7 +8,18 @@ public class HibernateUtil {
 
     private static SessionFactory buildSessionFactory() {
         try {
-            return new Configuration().configure().buildSessionFactory();
+            Configuration configuration = new Configuration().configure();
+
+            // Render-এর Environment Variables থেকে আসল credential পড়বে
+            // (hibernate.cfg.xml-এর placeholder value গুলোকে override করবে)
+            configuration.setProperty("hibernate.connection.url",
+                    System.getenv("DB_URL"));
+            configuration.setProperty("hibernate.connection.username",
+                    System.getenv("DB_USER"));
+            configuration.setProperty("hibernate.connection.password",
+                    System.getenv("DB_PASS"));
+
+            return configuration.buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Initial SessionFactory creation failed: " + ex);
             throw new ExceptionInInitializerError(ex);

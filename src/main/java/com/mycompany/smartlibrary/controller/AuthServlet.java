@@ -41,7 +41,8 @@ public class AuthServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
             resp.setStatus(500);
-            resp.getWriter().write(gson.toJson(Map.of("status", "error", "message", e.getMessage())));
+            String errorMsg = e.getMessage() != null ? e.getMessage() : e.getClass().getName();
+            resp.getWriter().write(gson.toJson(Map.of("status", "error", "message", errorMsg)));
         }
     }
 
